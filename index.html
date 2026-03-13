@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enejan Hayytjanova — Data Scientist &amp; ML Engineer</title>
+  <meta name="description" content="Mathematician-turned-Data Scientist with MSc Physics &amp; Mathematics. Expertise in ML, deep learning, NLP and computer vision. Bucharest, Romania." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Enejan H.</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#dashboards">Dashboards</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certs</a></li>
+      </ul>
+      <button class="nav-cta" onclick="openModal()">Hire Me</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Available for opportunities</div>
+      <h1 class="hero-title">
+        Enejan<br>
+        <em>Hayytjanova</em>
+      </h1>
+      <p class="hero-desc">
+        Mathematician-turned-Data Scientist &mdash; MSc in Physics &amp; Mathematics,
+        3+ years in education, now applying rigorous analytical thinking to ML,
+        deep learning, NLP, and <span id="typed-role" style="color:var(--accent2);font-weight:500;"></span><span class="cursor-blink">|</span>
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects &rarr;</a>
+        <button class="btn btn-ghost" onclick="openModal()">Hire Me</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num" data-count="1.5" data-suffix="+">1.5+</span>
+          <span class="hero-stat-label">Years DS Experience</span>
+        </div>
+        <div>
+          <span class="hero-stat-num" data-count="3" data-suffix="+">3+</span>
+          <span class="hero-stat-label">Years in Education</span>
+        </div>
+        <div>
+          <span class="hero-stat-num" data-count="9" data-suffix="+">9+</span>
+          <span class="hero-stat-label">Dashboards Built</span>
+        </div>
+        <div>
+          <span class="hero-stat-num" data-count="5">5</span>
+          <span class="hero-stat-label">Languages Spoken</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring"></div>
+          <div class="hero-photo" id="hero-photo">
+            <img src="photo.jpg" alt="Enejan Hayytjanova"
+              onerror="this.style.display='none';document.getElementById('photo-initials').style.display='flex';" />
+            <div id="photo-initials" class="photo-initials">EH</div>
+          </div>
+          <div class="hero-photo-badge">&#x1F4D0; MSc Mathematics</div>
+        </div>
+        <div class="hcard hcard-1">
+          <div class="hcard-sm-label">Experience</div>
+          <div class="hcard-value">1.5 yrs</div>
+          <div class="hcard-sub">Data Science &amp; ML</div>
+          <div class="hcard-loc">
+            <div class="dot-pulse"></div>
+            <span style="font-size:0.8rem;color:var(--muted);">Bucharest, Romania</span>
+          </div>
+        </div>
+        <div class="hcard hcard-2">
+          <div class="hcard-sm-label">Current Focus</div>
+          <div class="hcard-value" style="font-size:1.1rem;">LLMs &amp; GenAI</div>
+          <div class="hcard-sub" style="margin-top:0.4rem;">LangChain &middot; RAG &middot; OpenAI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <div class="section-header">
+            <div class="section-eyebrow">Who I Am</div>
+            <h2>About Me</h2>
+          </div>
+          <p>I&rsquo;m a data scientist based in <strong>Bucharest, Romania</strong>, with a deep academic foundation &mdash; a Master of Science in Physics and Mathematics &mdash; and a genuine passion for applying mathematical rigour to real-world AI challenges.</p>
+          <p>My work spans <strong>financial forecasting, NLP-based chatbots, computer vision pipelines, and medical predictions</strong>. I care about the full lifecycle &mdash; from EDA and model development to clean deployment using Flask, Streamlit, and Docker.</p>
+          <p>I currently also teach <strong>IGCSE Mathematics</strong> at ISB Bucharest and run an <em>&ldquo;Step to AI Engineering&rdquo;</em> club, introducing students to foundational AI concepts through hands-on projects.</p>
+          <p>I&rsquo;m actively expanding into <strong>LLMs and Generative AI</strong> &mdash; having built RAG chatbots using LangChain, FAISS, and OpenAI &mdash; and I&rsquo;m always eager for new challenges at the intersection of data, intelligence, and impact.</p>
+        </div>
+        <div class="about-sidebar stagger-children">
+          <div class="info-card">
+            <div class="info-icon">&#x1F4CD;</div>
+            <div><div class="info-label">Location</div><div class="info-value">Bucharest, Romania</div></div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">&#x2709;&#xFE0F;</div>
+            <div><div class="info-label">Email</div><div class="info-value"><a href="mailto:enejanhayytjanova@gmail.com">enejanhayytjanova@gmail.com</a></div></div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">&#x1F4F1;</div>
+            <div><div class="info-label">Phone</div><div class="info-value">+40 770 447 491</div></div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">&#x1F393;</div>
+            <div><div class="info-label">Highest Degree</div><div class="info-value">MSc Physics &amp; Mathematics</div></div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">&#x1F517;</div>
+            <div>
+              <div class="info-label">Profiles</div>
+              <div class="info-value">
+                <a href="https://github.com/Enejan-H" target="_blank" style="color:var(--accent2);">GitHub</a> &nbsp;&middot;&nbsp;
+                <a href="https://www.linkedin.com/in/enejan-hayytjanova-a3a5321b0/" target="_blank" style="color:var(--accent2);">LinkedIn</a> &nbsp;&middot;&nbsp;
+                <a href="https://www.youtube.com/channel/UCo4b6ncttVk1J0-5X-Lp7Zw/videos" target="_blank" style="color:var(--accent2);">YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">What I Know</div>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="skills-grid stagger-children">
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F40D;</span><h4>Programming</h4>
+          <div class="skill-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">SQL</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F9E0;</span><h4>Machine Learning</h4>
+          <div class="skill-tags"><span class="tag">Regression</span><span class="tag">Classification</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">Random Forests</span><span class="tag">SVM</span><span class="tag">KNN</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F52C;</span><h4>Deep Learning</h4>
+          <div class="skill-tags"><span class="tag">CNN</span><span class="tag">ANN</span><span class="tag">LSTM</span><span class="tag">GRU</span><span class="tag">NLP</span><span class="tag">Computer Vision</span><span class="tag">YOLO</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F916;</span><h4>LLMs &amp; GenAI</h4>
+          <div class="skill-tags"><span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">Hugging Face</span><span class="tag">FAISS</span><span class="tag">ChromaDB</span><span class="tag">RAG</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F4CA;</span><h4>Data Visualisation</h4>
+          <div class="skill-tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Plotly</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x2699;&#xFE0F;</span><h4>Tools &amp; Deployment</h4>
+          <div class="skill-tags"><span class="tag">Flask</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">Jenkins</span><span class="tag">Terraform</span><span class="tag">GitHub</span><span class="tag">Linux</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F4C8;</span><h4>Data Analysis</h4>
+          <div class="skill-tags"><span class="tag">EDA</span><span class="tag">RFM Analysis</span><span class="tag">Cohort Analysis</span><span class="tag">Basket Analysis</span><span class="tag">Time Series</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">&#x1F5C2;&#xFE0F;</span><h4>Project Management</h4>
+          <div class="skill-tags"><span class="tag">Agile / Scrum</span><span class="tag">SDLC</span><span class="tag">ClickUp</span><span class="tag">MS Excel</span><span class="tag">Google Sheets</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Career History</div>
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline-wrapper">
+        <div class="timeline-dates">
+          <div class="timeline-item"><div class="timeline-period">Aug 2025<br>Present</div><div class="timeline-dot current"></div></div>
+          <div class="timeline-item" style="margin-top:8.5rem;"><div class="timeline-period">Sep 2024<br>Jan 2025</div><div class="timeline-dot"></div></div>
+          <div class="timeline-item" style="margin-top:7rem;"><div class="timeline-period">Sep 2023<br>Sep 2024</div><div class="timeline-dot"></div></div>
+          <div class="timeline-item" style="margin-top:9.5rem;"><div class="timeline-period">May 2024<br>Jun 2024</div><div class="timeline-dot"></div></div>
+          <div class="timeline-item" style="margin-top:6rem;"><div class="timeline-period">Jun 2020<br>Aug 2022</div><div class="timeline-dot"></div></div>
+          <div class="timeline-item" style="margin-top:5.5rem;"><div class="timeline-period">Jun 2018<br>Aug 2019</div><div class="timeline-dot"></div></div>
+        </div>
+        <div class="timeline-entries stagger-children">
+          <div class="timeline-item">
+            <div class="entry-company">ISB &mdash; Bucharest, Romania</div>
+            <div class="entry-role">Secondary Math Teacher</div>
+            <ul class="entry-bullets">
+              <li>Teaching IGCSE Mathematics, developing students&rsquo; analytical thinking and quantitative reasoning skills.</li>
+              <li>Designed and leads the &ldquo;Step to AI Engineering&rdquo; Club &mdash; introducing AI, algorithms, and computational thinking through hands-on projects.</li>
+              <li>Training primary school students for the Math Without Borders international competition.</li>
+              <li>Developing structured learning materials focused on data interpretation and mathematical analysis.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="entry-company">Goldberg Med GmbH &mdash; W&uuml;rselen, Germany</div>
+            <div class="entry-role">Scrum Master</div>
+            <ul class="entry-bullets">
+              <li>Led cross-functional teams, facilitated Agile ceremonies, managed workflows via ClickUp, GitHub, Zoom, and Slack.</li>
+              <li>Oversaw sales-income-profit-cost analysis in Power BI &amp; Tableau.</li>
+              <li>Managed delivery of ML/DL projects: financial forecasting, chatbots, computer vision for welding defect detection, and colorectal cancer prediction models.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="entry-company">imeBrands &mdash; Illinois, USA</div>
+            <div class="entry-role">Data Scientist</div>
+            <ul class="entry-bullets">
+              <li>Built data-driven dashboards in Tableau and Power BI &mdash; optimising market positioning and increasing sales by 15%.</li>
+              <li>Developed time series forecasting models for revenue and profitability predictions.</li>
+              <li>Extracted insights from product review sentiment analysis, boosting feedback relevance by 20%.</li>
+              <li>Built ML models predicting Amazon Buy Box percentage and personalised recommendation engines using co-purchase patterns.</li>
+              <li>Developed an NLP-based chatbot for customer inquiries and personalised product suggestions.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="entry-company">Mentorness &mdash; Ahmedabad, India</div>
+            <div class="entry-role">Machine Learning Intern</div>
+            <ul class="entry-bullets">
+              <li>Prepared educational reels on unsupervised learning: DBSCAN, K-Means, hierarchical clustering.</li>
+              <li>Built and deployed a salary prediction regression model using Flask.</li>
+              <li>Built a Fastag fraud detection classifier (boosting + bagging), achieving 0.99 accuracy on 5,000+ transactions.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="entry-company">Freelance &mdash; Cluj, Romania</div>
+            <div class="entry-role">Online Mathematics Tutor</div>
+            <ul class="entry-bullets">
+              <li>Taught university-level maths: Calculus, Differential Equations, Probability, Linear Algebra.</li>
+              <li>Published instructional videos on YouTube covering mathematics from elementary to university level.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="entry-company">TNA Fatih Bilingual School &mdash; Banda Aceh, Indonesia</div>
+            <div class="entry-role">Secondary Math Teacher</div>
+            <ul class="entry-bullets">
+              <li>Delivered high-quality mathematics education focused on analytical thinking and problem-solving.</li>
+              <li>Created data-driven personalised learning modules, leading to a 30% improvement in student performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">What I&rsquo;ve Built</div>
+        <h2>ML Projects</h2>
+      </div>
+      <div class="projects-grid stagger-children">
+        <div class="project-card">
+          <div class="project-type">GenAI &middot; RAG &middot; LangChain</div>
+          <h3>RAG Chatbot</h3>
+          <p>Document-grounded Q&amp;A chatbot combining LangChain, Hugging Face embeddings, and FAISS vector search to retrieve fast, accurate answers from custom knowledge bases.</p>
+          <a href="https://github.com/Enejan-H?tab=repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="project-card">
+          <div class="project-type">GenAI &middot; LLM &middot; OpenAI</div>
+          <h3>My Interviewer</h3>
+          <p>AI-powered mock interviewer built with LangChain, OpenAI, and ChromaDB &mdash; uses carefully engineered system prompts to simulate a realistic technical interview experience.</p>
+          <a href="https://github.com/Enejan-H?tab=repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="project-card">
+          <div class="project-type">Computer Vision &middot; Deep Learning</div>
+          <h3>Flower Detection</h3>
+          <p>Deep learning pipeline for detecting and classifying flower species from image data &mdash; applied CNN architectures for robust multi-class image classification.</p>
+          <a href="https://github.com/Enejan-H?tab=repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="project-card">
+          <div class="project-type">Healthcare &middot; ML &middot; Clinical</div>
+          <h3>Heart Failure Prediction</h3>
+          <p>Clinical records classification model predicting the likelihood of heart failure from patient data using ensemble ML algorithms, with emphasis on recall for medical relevance.</p>
+          <a href="https://github.com/Enejan-H?tab=repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="project-card">
+          <div class="project-type">Industry &middot; Computer Vision &middot; YOLO</div>
+          <h3>Welding Quality Detection</h3>
+          <p>Computer vision models to detect welding defects in manufacturing processes &mdash; supporting industrial quality assurance pipelines at Goldberg Med GmbH.</p>
+          <a href="https://github.com/Enejan-H?tab=repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+        <div class="project-card">
+          <div class="project-type">Healthcare &middot; Deep Learning</div>
+          <h3>Colorectal Cancer Prediction</h3>
+          <p>ML model for predicting colorectal cancer risk from patient data &mdash; built and deployed as part of a broader AI &amp; ML solutions suite with a focus on model interpretability.</p>
+          <a href="https://github.com/Enejan-H?tab=repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARDS -->
+  <section id="dashboards">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Data Visualisation</div>
+        <h2>Dashboards</h2>
+      </div>
+      <div class="dash-grid stagger-children">
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/PizzaSalesAnalysis_17069020130850/Dashboard1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F355;</div><div><div class="dash-title">Pizza Sales Analysis</div><div class="dash-tool">Tableau &middot; Power BI</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/RoadAccidentDashboard_17043239934690/Dashboard1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F697;</div><div><div class="dash-title">Road Accident Dashboard</div><div class="dash-tool">Tableau</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/MappingAnalysis_17041513810680/Dashboard1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F5FA;&#xFE0F;</div><div><div class="dash-title">Mapping Analysis</div><div class="dash-tool">Tableau</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/BackgroundImageAnalysis-Polygon/Dashboard1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F537;</div><div><div class="dash-title">Background Image Analysis &mdash; Polygon</div><div class="dash-tool">Tableau</div></div>
+        </a>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiNjRiMzc4ZTktYTNjMS00YjMzLTk2NDAtOTVlYjU5ZTY3YWE1IiwidCI6ImM3Y2MyNTA2LTk1YTktNGJlNy05NDE3LTJmYjYwYWE4ZWQwZSIsImMiOjl9" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F4B9;</div><div><div class="dash-title">Sales Analysis</div><div class="dash-tool">Power BI</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/KPIAnalysis_17041435135600/Dashboard1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F4CC;</div><div><div class="dash-title">KPI Analysis</div><div class="dash-tool">Tableau</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/CustomerSegmentationAnalysis_17034618639580/Story1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F465;</div><div><div class="dash-title">Customer Segmentation Analysis</div><div class="dash-tool">Tableau</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/MarketingSpend-Revenue-PopulationRelationship/Dashboard1" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F4E3;</div><div><div class="dash-title">Marketing Spend &middot; Revenue &middot; Population</div><div class="dash-tool">Tableau</div></div>
+        </a>
+        <a href="https://public.tableau.com/app/profile/enejan.hayytjanova/viz/WorldPopulationHistory/Dashboard2" target="_blank" class="dash-card">
+          <div class="dash-badge">&#x1F30D;</div><div><div class="dash-title">World Population History</div><div class="dash-tool">Tableau</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Academic Background</div>
+        <h2>Education &amp; Languages</h2>
+      </div>
+      <div class="edu-grid stagger-children">
+        <div class="edu-card">
+          <div class="edu-school">Belarusian State University</div>
+          <div class="edu-degree">Master of Science &mdash; Physics &amp; Mathematics</div>
+          <div class="edu-loc">Minsk, Belarus</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-school">Int&rsquo;l Turkmen Turkish University</div>
+          <div class="edu-degree">Bachelor of Mathematics</div>
+          <div class="edu-loc">Ashgabat, Turkmenistan</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-school">Certifications</div>
+          <div class="edu-degree">IBM AI Developer</div>
+          <div class="edu-loc">LLM Engineering: Master AI &amp; LLMs</div>
+        </div>
+      </div>
+      <div style="margin-top:3rem;" class="reveal">
+        <div class="section-eyebrow" style="margin-bottom:1.5rem;">Languages</div>
+        <div class="lang-grid">
+          <div class="lang-card"><div class="lang-name">Turkmen</div><div class="lang-level">Native / Bilingual</div></div>
+          <div class="lang-card"><div class="lang-name">English</div><div class="lang-level">Professional Working</div></div>
+          <div class="lang-card"><div class="lang-name">Turkish</div><div class="lang-level">Full Professional</div></div>
+          <div class="lang-card"><div class="lang-name">Russian</div><div class="lang-level">Limited Working</div></div>
+          <div class="lang-card"><div class="lang-name">Romanian</div><div class="lang-level">Limited Working</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Lifelong Learning</div>
+        <h2>Certifications</h2>
+      </div>
+
+      <div class="cert-category reveal">
+        <div class="cert-category-label">AI &amp; Generative AI</div>
+        <div class="cert-grid stagger-children">
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#0f62fe;"></div><span class="cert-issuer">IBM</span><span class="cert-date">Jan 2025</span></div>
+            <div class="cert-name">IBM AI Developer</div>
+            <div class="cert-skills"><span class="tag">Artificial Intelligence</span><span class="tag">Generative AI</span><span class="tag">Machine Learning</span><span class="tag">Flask</span><span class="tag">SDLC</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#a435f0;"></div><span class="cert-issuer">Udemy</span><span class="cert-date">Dec 2024</span></div>
+            <div class="cert-name">Generative AI &mdash; The Ultimate Guide! Beginner to Leader in AI</div>
+            <div class="cert-skills"><span class="tag">Generative AI</span><span class="tag">LLMs</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#a435f0;"></div><span class="cert-issuer">Udemy</span><span class="cert-date">Nov 2024</span></div>
+            <div class="cert-name">Do&#x11F;al Dil &#x130;&#x15F;leme (NLP) ve B&uuml;y&uuml;k Dil Modellerine (LLMs) Giri&#x15F;</div>
+            <div class="cert-skills"><span class="tag">NLP</span><span class="tag">Large Language Models</span><span class="tag">Word Embeddings</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#e67e22;"></div><span class="cert-issuer">Analytics Vidhya</span><span class="cert-date">Sep 2024</span></div>
+            <div class="cert-name">Introduction to Generative AI</div>
+            <div class="cert-skills"><span class="tag">Generative AI</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category reveal">
+        <div class="cert-category-label">LLM Engineering</div>
+        <div class="cert-grid stagger-children">
+          <div class="cert-card cert-card-featured">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#a435f0;"></div><span class="cert-issuer">Udemy</span><span class="cert-date">Dec 2024</span></div>
+            <div class="cert-name">LLM Engineering: Master AI &amp; Large Language Models (LLMs)</div>
+            <div class="cert-skills"><span class="tag">LLMs</span><span class="tag">Prompt Engineering</span><span class="tag">RAG</span><span class="tag">Fine Tuning</span><span class="tag">Frontier Models</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category reveal">
+        <div class="cert-category-label">Data Science &amp; Machine Learning</div>
+        <div class="cert-grid stagger-children">
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#00b14f;"></div><span class="cert-issuer">TechPro Education</span><span class="cert-date">Sep 2024</span></div>
+            <div class="cert-name">Data Science</div>
+            <div class="cert-skills"><span class="tag">Machine Learning</span><span class="tag">Deep Learning</span><span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Data Storytelling</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#f7941d;"></div><span class="cert-issuer">FastHire Manpower Solution</span><span class="cert-date">Jul 2024</span></div>
+            <div class="cert-name">Certificate of Achievement in Machine Learning Internship</div>
+            <div class="cert-skills"><span class="tag">Kaggle</span><span class="tag">Machine Learning</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#00b14f;"></div><span class="cert-issuer">TechPro Education</span><span class="cert-date">Jun 2024</span></div>
+            <div class="cert-name">Artificial Intelligence Literacy and Technologies Course</div>
+            <div class="cert-skills"><span class="tag">AI Literacy</span><span class="tag">Gradio</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#2d7dd2;"></div><span class="cert-issuer">Gensn.in</span><span class="cert-date">Aug 2024</span></div>
+            <div class="cert-name">ICoTE &rsquo;24 Participation Certificate</div>
+            <div class="cert-skills"><span class="tag">Conference</span><span class="tag">Talent Ecosystem</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category reveal">
+        <div class="cert-category-label">Data Analysis &amp; Visualisation</div>
+        <div class="cert-grid stagger-children">
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#00b14f;"></div><span class="cert-issuer">TechPro Education</span><span class="cert-date">Jan 2024</span></div>
+            <div class="cert-name">Data Analysis</div>
+            <div class="cert-skills"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Pandas</span><span class="tag">Statistical Concepts</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#03ef62;"></div><span class="cert-issuer">DataCamp</span><span class="cert-date">Sep 2023</span></div>
+            <div class="cert-name">Introduction to Data</div>
+            <div class="cert-skills"><span class="tag">Data Fundamentals</span></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#1798c1;"></div><span class="cert-issuer">Cisco Networking Academy</span><span class="cert-date">Aug 2023</span></div>
+            <div class="cert-name">Data Analytics Essentials</div>
+            <div class="cert-skills"><span class="tag">Data Analytics</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category reveal">
+        <div class="cert-category-label">Cloud &amp; DevOps</div>
+        <div class="cert-grid stagger-children">
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#00b14f;"></div><span class="cert-issuer">TechPro Education</span><span class="cert-date">Aug 2025</span></div>
+            <div class="cert-name">AWS and DevOps Engineering</div>
+            <div class="cert-skills"><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span><span class="tag">Kubernetes</span><span class="tag">Prometheus</span><span class="tag">Grafana</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-category reveal">
+        <div class="cert-category-label">Programming</div>
+        <div class="cert-grid stagger-children">
+          <div class="cert-card">
+            <div class="cert-issuer-row"><div class="cert-dot" style="background:#03ef62;"></div><span class="cert-issuer">DataCamp</span><span class="cert-date">Aug 2023</span></div>
+            <div class="cert-name">Introduction to Python</div>
+            <div class="cert-skills"><span class="tag">Python</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-footer reveal">
+        <a href="https://www.linkedin.com/in/enejan-hayytjanova-a3a5321b0/" target="_blank" class="btn btn-ghost">View all on LinkedIn &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-eyebrow" style="color:rgba(255,255,255,0.4);justify-content:center;margin-bottom:1rem;">Get In Touch</div>
+      <h2 style="color:#fff;text-align:center;margin-bottom:1.2rem;">Let&rsquo;s Work Together</h2>
+      <p class="contact-subtitle">Whether you have a project in mind, a dataset that needs untangling, or just want to talk data &mdash; I&rsquo;d love to hear from you.</p>
+      <div class="contact-links">
+        <button class="contact-link" onclick="openModal()">&#x2709;&#xFE0F; Hire Me</button>
+        <a href="https://github.com/Enejan-H" target="_blank" class="contact-link">&#x1F419; GitHub</a>
+        <a href="https://www.linkedin.com/in/enejan-hayytjanova-a3a5321b0/" target="_blank" class="contact-link">&#x1F4BC; LinkedIn</a>
+        <a href="https://www.youtube.com/channel/UCo4b6ncttVk1J0-5X-Lp7Zw/videos" target="_blank" class="contact-link">&#x25B6;&#xFE0F; YouTube</a>
+        <a href="tel:+40770447491" class="contact-link">&#x1F4F1; +40 770 447 491</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Enejan Hayytjanova</p>
+    <p>Data Scientist &middot; Bucharest, Romania</p>
+  </footer>
+
+  <!-- HIRE ME MODAL -->
+  <div id="hire-modal" class="modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <div id="modal-form-wrap">
+        <div class="modal-header">
+          <div class="modal-eyebrow">Let&rsquo;s connect</div>
+          <h3 id="modal-title">Send Me a Message</h3>
+          <p class="modal-sub">I&rsquo;ll get back to you within 24 hours.</p>
+        </div>
+        <form id="hire-form" onsubmit="sendEmail(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Your Name</label>
+              <input type="text" id="f-name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="f-email">Your Email</label>
+              <input type="email" id="f-email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-subject">Subject</label>
+            <input type="text" id="f-subject" placeholder="Project collaboration / Job opportunity..." required />
+          </div>
+          <div class="form-group">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="send-btn">Send Message &rarr;</button>
+          </div>
+        </form>
+      </div>
+      <div id="modal-success" class="modal-success" style="display:none;">
+        <div class="success-icon">&#x2713;</div>
+        <h4>Message Sent!</h4>
+        <p>Thanks for reaching out &mdash; I&rsquo;ll reply within 24 hours.</p>
+        <button class="btn btn-primary" onclick="closeModal()" style="margin-top:1.5rem;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
