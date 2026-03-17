@@ -289,29 +289,18 @@ footer span{color:var(--accent2)}
 </section>
 <div class="divider"></div>
 
-<!-- AI CHATBOT -->
-<div class="chatbot-section" id="chat">
-  <div class="chat-container">
-    <div class="sec-title" style="margin-bottom:.4rem">Ask <span>AI</span> About Me</div>
-    <div class="sec-sub">Powered by Claude · Knows my full CV, skills & experience</div>
-    <div class="chat-header">
-      <div class="chat-avatar">EH</div>
-      <div class="chat-header-text">
-        <h3>Enejan's AI Assistant</h3>
-        <p><span class="online-dot"></span>Online · Ready to answer</p>
-      </div>
-    </div>
-    <div class="quick-questions" id="quickQ"></div>
-    <div class="chat-messages" id="chatMsgs">
-      <div class="msg"><div class="msg-icon">EH</div><div class="msg-bubble">Hi! I'm Enejan's AI assistant. I know all about her experience, skills, projects and certifications. What would you like to know?</div></div>
-    </div>
-    <div class="chat-input-row">
-      <input id="chatInput" type="text" placeholder="Ask about skills, experience, projects..." onkeydown="if(event.key==='Enter')sendChat()"/>
-      <button class="chat-send" onclick="sendChat()">Send</button>
-    </div>
+<div id="chatbot">
+  <div id="chat-header">Portfolio Assistant</div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-area">
+    <input id="chat-input" placeholder="Ask me about my work..." />
+    <button onclick="sendMessage()">Send</button>
   </div>
 </div>
-<div class="divider"></div>
+
+<!-- Scripts -->
+<script src="cv-data.js"></script>
+<script src="chatbot.js"></script>
 
 <!-- CONTACT -->
 <section id="contact">
