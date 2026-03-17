@@ -1179,12 +1179,10 @@ footer p { font-family: var(--ff-mono); font-size: 0.65rem; color: rgba(255,255,
   .cert-grid { grid-template-columns: 1fr; }
 }
 
-
-/* Classic left-bottom corner for CV chatbot */
 #chatbot {
   position: fixed;
   bottom: 20px;
-  left: 20px; /* changed from right:20px */
+  right: 20px; /* bottom-right corner */
   width: 320px;
   background: var(--bg2);
   border: 1px solid var(--border);
