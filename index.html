@@ -289,12 +289,15 @@ footer span{color:var(--accent2)}
 </section>
 <div class="divider"></div>
 
-<div id="chatbot">
-  <div id="chat-header">Portfolio Assistant</div>
-  <div id="chat-messages"></div>
-  <div id="chat-input-area">
-    <input id="chat-input" placeholder="Ask me about my work..." />
-    <button onclick="sendMessage()">Send</button>
+<!-- Floating CV Chatbot -->
+<div id="chatbot" style="display:none;">
+  <div id="chat-header">Portfolio Assistant
+    <span style="float:right; cursor:pointer;" onclick="toggleChat()">✖</span>
+  </div>
+  <div id="chat-messages" class="chat-messages"></div>
+  <div id="chat-input-area" class="chat-input-row">
+    <input id="chat-input" placeholder="Ask me about my skills..." />
+    <button onclick="sendMessage()" class="chat-send">Send</button>
   </div>
 </div>
 
