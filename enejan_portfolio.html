@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Enejan Hayytjanova</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;
+  --accent:#6c63ff;--accent2:#00d4aa;--accent3:#ff6b6b;
+  --text:#f0f0f8;--text2:#a0a0b8;--text3:#6060788;
+  --border:#2a2a3a;--card:#16161e;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:0 2rem;height:60px}
+.logo{font-weight:700;font-size:1.1rem;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.85rem;transition:color .2s}
+.nav-links a:hover{color:var(--accent2)}
+.hire-btn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;padding:.45rem 1.2rem;border-radius:50px;font-weight:600;font-size:.85rem;cursor:pointer;transition:opacity .2s}
+.hire-btn:hover{opacity:.85}
+
+/* SECTIONS */
+section{padding:5rem 2rem;max-width:1000px;margin:0 auto}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;max-width:1000px;margin:0 auto;padding:5rem 2rem 2rem;gap:3rem}
+.hero-text{flex:1}
+.hero-tag{display:inline-block;background:rgba(108,99,255,.15);color:var(--accent);border:1px solid rgba(108,99,255,.3);padding:.25rem .85rem;border-radius:50px;font-size:.8rem;margin-bottom:1rem}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:.75rem}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--text2);font-size:1rem;max-width:480px;margin-bottom:1.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;padding:.7rem 1.8rem;border-radius:50px;font-weight:600;cursor:pointer;font-size:.95rem;transition:opacity .2s;text-decoration:none;display:inline-block}
+.btn-primary:hover{opacity:.85}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border);padding:.7rem 1.8rem;border-radius:50px;font-weight:600;cursor:pointer;font-size:.95rem;transition:border-color .2s;text-decoration:none;display:inline-block}
+.btn-ghost:hover{border-color:var(--accent)}
+.hero-photo{width:260px;height:260px;border-radius:50%;border:3px solid var(--accent);object-fit:cover;flex-shrink:0}
+.hero-photo-placeholder{width:260px;height:260px;border-radius:50%;border:3px solid var(--accent);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:5rem;flex-shrink:0}
+.stat-row{display:flex;gap:2rem;margin-top:1.5rem}
+.stat span{display:block;font-size:1.6rem;font-weight:800;color:var(--accent2)}.stat small{color:var(--text2);font-size:.78rem}
+
+/* ABOUT */
+#about p{color:var(--text2);font-size:1rem;max-width:720px;line-height:1.8}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2))}
+.titem{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
+.titem::before{content:'';position:absolute;left:-2.1rem;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.titem h3{font-size:1rem;font-weight:700;color:var(--text)}
+.titem .company{color:var(--accent2);font-size:.85rem;margin-bottom:.15rem}
+.titem .date{color:var(--text2);font-size:.78rem;margin-bottom:.6rem}
+.titem ul{color:var(--text2);font-size:.88rem;padding-left:1.2rem}
+.titem ul li{margin-bottom:.3rem}
+
+/* EDUCATION */
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1rem}
+.edu-card h3{font-size:.95rem;font-weight:700}
+.edu-card p{color:var(--text2);font-size:.85rem;margin-top:.25rem}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem}
+.skill-chip{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.4rem .8rem;font-size:.78rem;color:var(--text2);text-align:center;transition:border-color .2s,color .2s}
+.skill-chip:hover{border-color:var(--accent);color:var(--text)}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .2s,transform .2s}
+.proj-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.proj-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.proj-card p{color:var(--text2);font-size:.82rem;line-height:1.5}
+.proj-tag{display:inline-block;background:rgba(108,99,255,.15);color:var(--accent);border-radius:4px;font-size:.7rem;padding:.15rem .5rem;margin:.4rem .3rem 0 0}
+
+/* CERTS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.8rem}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;display:flex;align-items:flex-start;gap:.75rem}
+.cert-icon{width:36px;height:36px;border-radius:8px;background:rgba(108,99,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.cert-card h4{font-size:.82rem;font-weight:600;line-height:1.3}
+.cert-card p{color:var(--text2);font-size:.73rem;margin-top:.2rem}
+
+/* CONTACT & EMAIL BOX */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+@media(max-width:640px){.contact-wrap{grid-template-columns:1fr}.hero{flex-direction:column;text-align:center}.hero p{margin:0 auto 1.5rem}.stat-row{justify-content:center}}
+.contact-info p{color:var(--text2);font-size:.9rem;margin-bottom:1.2rem}
+.contact-link{display:flex;align-items:center;gap:.6rem;color:var(--text2);text-decoration:none;margin-bottom:.75rem;font-size:.9rem;transition:color .2s}
+.contact-link:hover{color:var(--accent2)}
+.contact-link svg{width:18px;height:18px;fill:var(--accent)}
+.email-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem}
+.email-box h3{font-size:1rem;font-weight:700;margin-bottom:1rem}
+.email-box input,.email-box textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:.65rem .9rem;font-size:.88rem;margin-bottom:.75rem;outline:none;transition:border-color .2s;font-family:inherit}
+.email-box input:focus,.email-box textarea:focus{border-color:var(--accent)}
+.email-box textarea{min-height:110px;resize:vertical}
+.send-btn{width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;padding:.7rem;border-radius:50px;font-weight:600;font-size:.9rem;cursor:pointer;transition:opacity .2s}
+.send-btn:hover{opacity:.85}
+.send-status{text-align:center;font-size:.82rem;margin-top:.5rem;min-height:1.2em}
+
+/* CHATBOT */
+.chatbot-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.chat-container{max-width:720px;margin:0 auto}
+.chat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.chat-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:#fff;flex-shrink:0}
+.chat-header-text h3{font-size:1rem;font-weight:700}
+.chat-header-text p{color:var(--text2);font-size:.78rem}
+.chat-online{width:8px;height:8px;border-radius:50%;background:var(--accent2);display:inline-block;margin-right:.3rem}
+.chat-messages{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1rem;min-height:280px;max-height:400px;overflow-y:auto;display:flex;flex-direction:column;gap:.8rem;margin-bottom:1rem}
+.msg{display:flex;gap:.6rem;align-items:flex-start;max-width:85%}
+.msg.user{align-self:flex-end;flex-direction:row-reverse}
+.msg-bubble{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.55rem .85rem;font-size:.85rem;color:var(--text2);line-height:1.5}
+.msg.user .msg-bubble{background:rgba(108,99,255,.2);border-color:rgba(108,99,255,.4);color:var(--text)}
+.msg-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0;margin-top:2px}
+.chat-input-row{display:flex;gap:.6rem}
+.chat-input-row input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:50px;color:var(--text);padding:.6rem 1rem;font-size:.88rem;outline:none;transition:border-color .2s;font-family:inherit}
+.chat-input-row input:focus{border-color:var(--accent)}
+.chat-send{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;padding:.6rem 1.2rem;font-weight:600;font-size:.85rem;cursor:pointer;transition:opacity .2s}
+.chat-send:hover{opacity:.85}
+.quick-questions{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
+.quick-btn{background:var(--card);border:1px solid var(--border);border-radius:50px;color:var(--text2);font-size:.75rem;padding:.3rem .8rem;cursor:pointer;transition:border-color .2s,color .2s}
+.quick-btn:hover{border-color:var(--accent);color:var(--text)}
+.typing{display:flex;align-items:center;gap:4px;padding:.55rem .85rem;background:var(--card);border:1px solid var(--border);border-radius:10px;width:fit-content}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--text2);animation:bounce .9s infinite}
+.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
+
+/* SECTION TITLES */
+.sec-title{font-size:1.8rem;font-weight:800;margin-bottom:.5rem}
+.sec-title span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-sub{color:var(--text2);font-size:.9rem;margin-bottom:2rem}
+.divider{height:1px;background:var(--border);margin:0}
+
+/* HIRE MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2rem;max-width:440px;width:90%;position:relative}
+.modal h2{font-size:1.3rem;font-weight:800;margin-bottom:.4rem}
+.modal p{color:var(--text2);font-size:.88rem;margin-bottom:1.25rem}
+.modal input,.modal textarea,.modal select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:.65rem .9rem;font-size:.88rem;margin-bottom:.75rem;outline:none;font-family:inherit;transition:border-color .2s}
+.modal input:focus,.modal textarea:focus{border-color:var(--accent)}
+.modal textarea{min-height:90px;resize:vertical}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text2);font-size:1.3rem;cursor:pointer}
+.modal-close:hover{color:var(--text)}
+footer{text-align:center;padding:2rem;color:var(--text2);font-size:.82rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">EH</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#chat">Ask AI</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hire-btn" onclick="openHire()">Hire Me</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-tag">Open to Opportunities</div>
+    <h1>Hi, I'm <span>Enejan</span><br/>Hayytjanova</h1>
+    <p>Junior Data Scientist with 1.5+ years of expertise in data analysis, machine learning, deep learning, NLP, and computer vision. Building intelligent, data-driven solutions with Python, Flask, Docker & LLMs.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <button class="btn-ghost" onclick="openHire()">Hire Me</button>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span>1.5+</span><small>Years Experience</small></div>
+      <div class="stat"><span>10+</span><small>Certifications</small></div>
+      <div class="stat"><span>9+</span><small>Projects</small></div>
+    </div>
+  </div>
+  <div class="hero-photo-placeholder">👩‍💻</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-title">About <span>Me</span></div>
+  <div class="sec-sub">My background & what drives me</div>
+  <p>Experienced Data Scientist based in <strong>Bucharest, Romania</strong> with a Master of Science in Physics and Mathematics. I specialize in building end-to-end ML pipelines — from exploratory data analysis and model training to deploying solutions with Flask, Streamlit, and Docker. Currently expanding expertise in LLMs and Generative AI to drive innovative, data-driven solutions. Proficient in Python with 3+ years of mathematics education experience, which sharpens my analytical thinking and problem-solving approach.</p>
+</section>
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-title">Work <span>Experience</span></div>
+  <div class="sec-sub">My professional journey</div>
+  <div class="timeline">
+    <div class="titem">
+      <h3>Secondary Math Teacher</h3>
+      <div class="company">ISB, Bucharest, Romania</div>
+      <div class="date">August 2025 – Present</div>
+      <ul>
+        <li>Teach IGCSE Mathematics, developing students' analytical and quantitative reasoning skills.</li>
+        <li>Introduce students to foundational AI, algorithms & computational thinking via the "Step to AI Engineering" Club.</li>
+        <li>Train primary students for the Math Without Borders international competition.</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <h3>Scrum Master</h3>
+      <div class="company">Goldberg Med GmbH, Würselen, Germany</div>
+      <div class="date">September 2024 – January 2025</div>
+      <ul>
+        <li>Led cross-functional teams with Agile ceremonies using ClickUp, GitHub, Google Drive, Zoom & Slack.</li>
+        <li>Developed ML/DL algorithms for financial forecasting, built chatbots, and implemented computer vision models for colorectal cancer prediction.</li>
+        <li>Oversaw ROI analysis in Power BI & Tableau.</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <h3>Data Scientist</h3>
+      <div class="company">IMEBrands, Illinois, USA</div>
+      <div class="date">September 2023 – September 2024</div>
+      <ul>
+        <li>Conducted EDA, built Tableau & Power BI dashboards tracking key metrics — increased sales by 15%.</li>
+        <li>Applied sentiment analysis on product reviews, boosting feedback relevance by 20%.</li>
+        <li>Boosted Amazon's Buy Box percentage via machine learning and cross-selling strategies.</li>
+        <li>Developed an NLP-based chatbot for customer inquiries and product suggestions.</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <h3>Machine Learning Intern</h3>
+      <div class="company">Mentorness, Ahmedabad, India</div>
+      <div class="date">May 2024 – June 2024</div>
+      <ul>
+        <li>Prepared real-world unsupervised learning algorithms (DBSCAN, K-means, hierarchical clustering).</li>
+        <li>Built a salary prediction regression model with Flask, focusing on preprocessing & hyperparameter tuning.</li>
+        <li>Built a fraud detection classification model with 99% accuracy on 5,000+ transactions.</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <h3>Online Tutor of Mathematics</h3>
+      <div class="company">Freelance, Cluj, Romania</div>
+      <div class="date">June 2020 – August 2022</div>
+      <ul>
+        <li>Taught university-level mathematics including Calculus, Differential Equations & Probability.</li>
+        <li>Published mathematics tutorial videos on YouTube for a broad audience.</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <h3>Secondary Math Teacher</h3>
+      <div class="company">TNA Faith Bilingual School, Banda Aceh, Indonesia</div>
+      <div class="date">June 2018 – August 2019</div>
+      <ul>
+        <li>Delivered high-quality mathematics education focused on critical problem-solving skills.</li>
+        <li>Personalized learning modules based on data-driven assessments, improving student performance by 30%.</li>
+      </ul>
+    </div>
+    <div class="titem">
+      <h3>Secondary Math Teacher</h3>
+      <div class="company">T.O Turkmen-Turkish High School, Ashgabat, Turkmenistan</div>
+      <div class="date">August 2012 – August 2014</div>
+      <ul>
+        <li>Taught advanced mathematical concepts; utilized Excel dashboards to track and communicate student progress.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-title"><span>Education</span></div>
+  <div class="sec-sub">Academic background</div>
+  <div class="edu-card">
+    <h3>Master of Science – Physics and Mathematics</h3>
+    <p>Belarusian State University Minsk, Belarus</p>
+  </div>
+  <div class="edu-card">
+    <h3>Bachelor of Mathematics</h3>
+    <p>International Turkmen Turkish University, Ashgabat, Turkmenistan</p>
+  </div>
+  <div class="edu-card">
+    <h3>Relevant Coursework</h3>
+    <p>IBM AI Developer · LLM Engineering: Master AI & Large Language Models</p>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-title">Technical <span>Skills</span></div>
+  <div class="sec-sub">Tools, languages & frameworks I work with</div>
+  <div class="skills-grid">
+    <div class="skill-chip">Python</div><div class="skill-chip">TensorFlow</div>
+    <div class="skill-chip">Keras</div><div class="skill-chip">Scikit-learn</div>
+    <div class="skill-chip">PyTorch</div><div class="skill-chip">NLP / NLU</div>
+    <div class="skill-chip">LLMs</div><div class="skill-chip">RAG</div>
+    <div class="skill-chip">LangChain</div><div class="skill-chip">Generative AI</div>
+    <div class="skill-chip">Computer Vision</div><div class="skill-chip">Deep Learning</div>
+    <div class="skill-chip">SQL</div><div class="skill-chip">Tableau</div>
+    <div class="skill-chip">Power BI</div><div class="skill-chip">Flask</div>
+    <div class="skill-chip">Streamlit</div><div class="skill-chip">Docker</div>
+    <div class="skill-chip">AWS</div><div class="skill-chip">Terraform</div>
+    <div class="skill-chip">Kubernetes</div><div class="skill-chip">Jenkins</div>
+    <div class="skill-chip">Pandas</div><div class="skill-chip">NumPy</div>
+    <div class="skill-chip">GitHub</div><div class="skill-chip">Jupyter</div>
+    <div class="skill-chip">Agile / Scrum</div><div class="skill-chip">MS Excel</div>
+    <div class="skill-chip">YOLO</div><div class="skill-chip">Gradio</div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-title">Featured <span>Projects</span></div>
+  <div class="sec-sub">Machine learning, dashboards & AI projects</div>
+  <div class="proj-grid">
+    <div class="proj-card"><h3>RAG Chatbot</h3><p>Combined LangChain, Hugging Face & FAISS to build a QA chatbot over documents.</p><span class="proj-tag">LangChain</span><span class="proj-tag">FAISS</span><span class="proj-tag">RAG</span></div>
+    <div class="proj-card"><h3>My Interviewer</h3><p>LangChain + OpenAI + ChromaDB chatbot that acts as a professional interviewer.</p><span class="proj-tag">LangChain</span><span class="proj-tag">OpenAI</span><span class="proj-tag">ChromaDB</span></div>
+    <div class="proj-card"><h3>Flower Detection (Deep Learning)</h3><p>Deep learning model to classify flower species from image data.</p><span class="proj-tag">CNN</span><span class="proj-tag">TensorFlow</span><span class="proj-tag">Computer Vision</span></div>
+    <div class="proj-card"><h3>Heart Failure Prediction</h3><p>Predicted likelihood of heart failure from clinical records using ML algorithms.</p><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Python</span><span class="proj-tag">ML</span></div>
+    <div class="proj-card"><h3>Pizza Sales Analysis</h3><p>Tableau dashboard analyzing sales performance, revenue, and trends.</p><span class="proj-tag">Tableau</span><span class="proj-tag">Power BI</span></div>
+    <div class="proj-card"><h3>Road Accident Dashboard</h3><p>Interactive Tableau dashboard visualizing accident data and safety insights.</p><span class="proj-tag">Tableau</span><span class="proj-tag">Data Viz</span></div>
+    <div class="proj-card"><h3>Mapping Analysis</h3><p>Geospatial data mapping and visual analytics using Tableau.</p><span class="proj-tag">Tableau</span><span class="proj-tag">GIS</span></div>
+    <div class="proj-card"><h3>Background Image Analysis</h3><p>Polygon-based background image segmentation and analysis in Tableau.</p><span class="proj-tag">Tableau</span><span class="proj-tag">Image Analysis</span></div>
+    <div class="proj-card"><h3>World Population History</h3><p>Tableau visualization exploring world population trends over centuries.</p><span class="proj-tag">Tableau</span><span class="proj-tag">Data Story</span></div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="sec-title"><span>Certifications</span></div>
+  <div class="sec-sub">Professional credentials & training</div>
+  <div class="cert-grid">
+    <div class="cert-card"><div class="cert-icon">☁️</div><div><h4>AWS and DevOps Engineering</h4><p>TechPro Education · Aug 2025</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🤖</div><div><h4>IBM AI Developer</h4><p>IBM · Jan 2025</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🧠</div><div><h4>Generative AI – Beginner to Leader</h4><p>Udemy · Dec 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🔗</div><div><h4>LLM Engineering: Master AI & LLMs</h4><p>Udemy · Dec 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">📝</div><div><h4>NLP & Big Language Models Intro</h4><p>Udemy · Nov 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">✨</div><div><h4>Introduction to Generative AI</h4><p>Analytics Vidhya · Sep 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">📊</div><div><h4>Data Science</h4><p>TechPro Education · Sep 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🏆</div><div><h4>ICoTE '24 Participation Certificate</h4><p>Genuinein · Aug 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">⚡</div><div><h4>ML Internship Achievement</h4><p>FastHire Manpower Solution · Jul 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🔬</div><div><h4>AI Literacy & Technologies</h4><p>TechPro Education · Jun 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">📈</div><div><h4>Data Analysis</h4><p>TechPro Education · Jan 2024</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🐍</div><div><h4>Introduction to Python</h4><p>DataCamp · Aug 2023</p></div></div>
+    <div class="cert-card"><div class="cert-icon">📉</div><div><h4>Data Analytics Essentials</h4><p>Cisco Networking Academy · Aug 2023</p></div></div>
+    <div class="cert-card"><div class="cert-icon">🗂️</div><div><h4>Introduction to Data</h4><p>DataCamp · Sep 2023</p></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- AI CHATBOT -->
+<section class="chatbot-section" id="chat">
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-avatar">EH</div>
+      <div class="chat-header-text">
+        <h3>Ask Enejan's AI Assistant</h3>
+        <p><span class="chat-online"></span>Powered by Claude · Knows Enejan's CV, skills & experience</p>
+      </div>
+    </div>
+    <div class="quick-questions">
+      <button class="quick-btn" onclick="askQuick('What are Enejan\'s main technical skills?')">Technical skills?</button>
+      <button class="quick-btn" onclick="askQuick('What ML projects has Enejan built?')">ML projects?</button>
+      <button class="quick-btn" onclick="askQuick('What is Enejan\'s work experience?')">Work experience?</button>
+      <button class="quick-btn" onclick="askQuick('Is Enejan available for hire?')">Available to hire?</button>
+      <button class="quick-btn" onclick="askQuick('What languages does Enejan speak?')">Languages?</button>
+    </div>
+    <div class="chat-messages" id="chatMsgs">
+      <div class="msg">
+        <div class="msg-icon">EH</div>
+        <div class="msg-bubble">Hi! I'm Enejan's AI assistant. I know all about her experience, skills, projects and certifications. Ask me anything!</div>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="Ask about Enejan's experience, skills, projects..." onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="chat-send" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-title">Get In <span>Touch</span></div>
+  <div class="sec-sub">Let's build something together</div>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <p>I'm open to data science, AI/ML engineering, and analytics roles. Feel free to reach out!</p>
+      <a class="contact-link" href="mailto:eneianhayytjanova@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        eneianhayytjanova@gmail.com
+      </a>
+      <a class="contact-link" href="https://linkedin.com" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        LinkedIn Profile
+      </a>
+      <a class="contact-link" href="https://github.com" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub Profile
+      </a>
+      <a class="contact-link" href="tel:+40770447491">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        +40 770 447 491
+      </a>
+      <p style="color:var(--text2);font-size:.85rem;margin-top:1rem">📍 Bucharest, Romania</p>
+    </div>
+    <div class="email-box">
+      <h3>Send me a message</h3>
+      <input id="fromName" type="text" placeholder="Your name"/>
+      <input id="fromEmail" type="email" placeholder="Your email"/>
+      <input id="msgSubject" type="text" placeholder="Subject"/>
+      <textarea id="msgBody" placeholder="Your message..."></textarea>
+      <button class="send-btn" onclick="sendEmail()">Send Message</button>
+      <div class="send-status" id="sendStatus"></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Enejan Hayytjanova · Built with passion & Python</footer>
+
+<!-- HIRE MODAL -->
+<div class="modal-overlay" id="hireModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeHire()">✕</button>
+    <h2>Let's Work Together</h2>
+    <p>Fill in some details and I'll get back to you as soon as possible.</p>
+    <input id="hireCompany" type="text" placeholder="Company / Your name"/>
+    <input id="hireEmail" type="email" placeholder="Your email"/>
+    <input id="hireRole" type="text" placeholder="Role / Position (e.g. Data Scientist)"/>
+    <textarea id="hireMsg" placeholder="Tell me about the project or role..."></textarea>
+    <button class="send-btn" onclick="submitHire()">Send Inquiry</button>
+    <div class="send-status" id="hireStatus"></div>
+  </div>
+</div>
+
+<script>
+const CV_CONTEXT = `
+Enejan Hayytjanova – Junior Data Scientist
+Location: Bucharest, Romania
+Email: eneianhayytjanova@gmail.com | Phone: +40770447491
+
+SUMMARY: Experienced Data Scientist with 1.5+ years in data analysis, machine learning (CNN, ANN, LSTM), NLP, and computer vision. Proficient in Python. Deploys ML solutions with Flask, Streamlit, Docker. Expanding in LLMs and Generative AI.
+
+EXPERIENCE:
+- Secondary Math Teacher, ISB Bucharest (Aug 2025–Present): IGCSE Maths, AI club, Math Without Borders competition.
+- Scrum Master, Goldberg Med GmbH Germany (Sep 2024–Jan 2025): Led Agile teams, developed ML/DL for financial forecasting, computer vision for cancer prediction.
+- Data Scientist, IMEBrands Illinois USA (Sep 2023–Sep 2024): EDA, Tableau/Power BI dashboards, boosted sales 15%, sentiment analysis +20% relevance, Amazon Buy Box ML optimization, NLP chatbot.
+- ML Intern, Mentorness India (May 2024–Jun 2024): Unsupervised learning, salary prediction Flask app, fraud detection 99% accuracy.
+- Online Tutor of Mathematics, Freelance Cluj Romania (Jun 2020–Aug 2022): University maths tutoring, YouTube channel.
+- Secondary Math Teacher, TNA Faith Bilingual School Indonesia (Jun 2018–Aug 2019): Personalized data-driven modules, improved student performance 30%.
+- Secondary Math Teacher, T.O Turkmen-Turkish High School Turkmenistan (Aug 2012–Aug 2014).
+
+EDUCATION:
+- Master of Science in Physics and Mathematics – Belarusian State University Minsk, Belarus
+- Bachelor of Mathematics – International Turkmen Turkish University, Ashgabat, Turkmenistan
+- Relevant coursework: IBM AI Developer, LLM Engineering: Master AI & LLMs
+
+SKILLS:
+Technical: Python (Pandas, NumPy, Scikit-learn, TensorFlow, Keras), SQL, Data Visualization (Tableau, Power BI, Matplotlib, Seaborn, Plotly), Machine Learning (Regression, Classification, Decision Trees, Random Forest, KNN, SVM, Gradient Boosting, XGBoost, LightGBM, K-means, Hierarchical Clustering), Deep Learning (CNN, ANN, LSTM, GRU), NLP, Computer Vision, Jupyter Notebook, Flask, YOLO, GitHub, ClickUp, Streamlit, Docker, Terraform, Ansible, Jenkins, Linux.
+Data Analysis: EDA, RFM analysis, Cohort analysis, Basket analysis, NumPy, Statistics, Time Series Forecasting.
+Project Management: Agile, SDLC, Google Sheets, MS Excel.
+Soft Skills: Analytical Problem-Solving, Effective Communication, Teamwork, Adaptability, Learning Agility, Detail-oriented, Self-Discipline, Time Management.
+
+LANGUAGES: English (Professional), Turkish (Professional), Russian (Limited), Romanian (Limited), Turkmen (Native).
+
+PROJECTS:
+1. RAG Chatbot – LangChain, Hugging Face, FAISS for document QA.
+2. My Interviewer – LangChain, OpenAI, ChromaDB interviewer chatbot.
+3. Flower Detection – Deep learning for flower species classification.
+4. Heart Failure Prediction – ML on clinical records.
+5. Pizza Sales Analysis Dashboard (Tableau/Power BI).
+6. Road Accident Dashboard (Tableau).
+7. Mapping Analysis (Tableau).
+8. Background Image Analysis – Polygon (Tableau).
+9. Sales Analysis (Power BI).
+10. KPI Analysis (Tableau).
+11. Customer Segmentation Analysis (Tableau).
+12. Marketing Spend Revenue Population Relationship (Tableau).
+13. World Population History (Tableau).
+
+CERTIFICATIONS: AWS & DevOps Engineering (TechPro, Aug 2025), IBM AI Developer (IBM, Jan 2025), Generative AI Ultimate Guide (Udemy, Dec 2024), LLM Engineering Master AI & LLMs (Udemy, Dec 2024), NLP & Big Language Models (Udemy, Nov 2024), Introduction to Generative AI (Analytics Vidhya, Sep 2024), Data Science (TechPro, Sep 2024), ICoTE '24 (Genuinein, Aug 2024), ML Internship Certificate (FastHire, Jul 2024), AI Literacy & Technologies (TechPro, Jun 2024), Data Analysis (TechPro, Jan 2024), Introduction to Data (DataCamp, Sep 2023), Introduction to Python (DataCamp, Aug 2023), Data Analytics Essentials (Cisco, Aug 2023).
+
+AVAILABILITY: Open to Data Science, ML Engineering, AI Engineering, Data Analytics roles. Based in Bucharest but open to remote/hybrid.
+`;
+
+const msgs = document.getElementById('chatMsgs');
+let chatHistory = [];
+
+function appendMsg(text, isUser){
+  const d = document.createElement('div');
+  d.className = 'msg' + (isUser?' user':'');
+  d.innerHTML = isUser
+    ? `<div class="msg-icon" style="background:linear-gradient(135deg,#888,#555)">You</div><div class="msg-bubble">${escHtml(text)}</div>`
+    : `<div class="msg-icon">EH</div><div class="msg-bubble">${text}</div>`;
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping(){
+  const d = document.createElement('div');
+  d.className = 'msg'; d.id = 'typing';
+  d.innerHTML = `<div class="msg-icon">EH</div><div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+async function sendChat(){
+  const inp = document.getElementById('chatInput');
+  const q = inp.value.trim(); if(!q) return;
+  inp.value = '';
+  appendMsg(q, true);
+  chatHistory.push({role:'user', content:q});
+  showTyping();
+  try{
+    const sysPrompt = `You are an AI assistant representing Enejan Hayytjanova, a Junior Data Scientist. Answer questions about her based ONLY on the CV information below. Be friendly, professional and concise. If asked something not covered in the CV, say you don't have that information but suggest contacting Enejan directly.\n\nCV DATA:\n${CV_CONTEXT}`;
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system: sysPrompt,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    document.getElementById('typing')?.remove();
+    const reply = data.content?.[0]?.text || "I'm having trouble responding right now. Please try again!";
+    chatHistory.push({role:'assistant', content:reply});
+    appendMsg(reply.replace(/\n/g,'<br/>'), false);
+  } catch(e){
+    document.getElementById('typing')?.remove();
+    appendMsg("Sorry, I'm having connection issues. Please try again shortly.", false);
+  }
+}
+
+function askQuick(q){
+  document.getElementById('chatInput').value = q;
+  sendChat();
+}
+
+function sendEmail(){
+  const name = document.getElementById('fromName').value.trim();
+  const email = document.getElementById('fromEmail').value.trim();
+  const subject = document.getElementById('msgSubject').value.trim();
+  const body = document.getElementById('msgBody').value.trim();
+  const st = document.getElementById('sendStatus');
+  if(!name||!email||!body){st.style.color='var(--accent3)';st.textContent='Please fill in all required fields.';return;}
+  const mailto = `mailto:eneianhayytjanova@gmail.com?subject=${encodeURIComponent(subject||'Portfolio Inquiry from '+name)}&body=${encodeURIComponent('From: '+name+'\nEmail: '+email+'\n\n'+body)}`;
+  window.open(mailto);
+  st.style.color='var(--accent2)';
+  st.textContent='Opening your email client...';
+}
+
+function openHire(){document.getElementById('hireModal').classList.add('open')}
+function closeHire(){document.getElementById('hireModal').classList.remove('open')}
+document.getElementById('hireModal').addEventListener('click',function(e){if(e.target===this)closeHire()})
+
+function submitHire(){
+  const company = document.getElementById('hireCompany').value.trim();
+  const email = document.getElementById('hireEmail').value.trim();
+  const role = document.getElementById('hireRole').value.trim();
+  const msg = document.getElementById('hireMsg').value.trim();
+  const st = document.getElementById('hireStatus');
+  if(!company||!email){st.style.color='var(--accent3)';st.textContent='Please fill in your name and email.';return;}
+  const body = `Company/Name: ${company}\nEmail: ${email}\nRole: ${role}\n\n${msg}`;
+  const mailto = `mailto:eneianhayytjanova@gmail.com?subject=${encodeURIComponent('Hire Inquiry – '+role)}&body=${encodeURIComponent(body)}`;
+  window.open(mailto);
+  st.style.color='var(--accent2)';
+  st.textContent='Opening your email client. Thank you!';
+}
+</script>
+</body>
+</html>
